@@ -53,6 +53,30 @@ class Auth extends MY_Controller
       redirect('auth/login', 'refresh');
     }
   }
+
+  /**
+     * Función que renderiza la vista de selección de opción entre certificados y dispersión de pagos
+     * @param null
+     * @return void
+     */
+  function menu()
+  {
+    if (!$this->ion_auth->logged_in()) {
+      redirect('auth/login', 'refresh');
+    } else {
+      $data = array(
+        'LASTSESSIONID' => $this->session->userdata('session_id')
+      );
+      $sesion=$data['LASTSESSIONID'];
+      $id= COD_USUARIO;
+      $cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl",false);
+      $parametros = array('numero' => "1" ,'sesion' => $sesion,'id' => $id,);
+      $respuesta = $cliente->call('Certificados_services..ListaCertificados', $parametros);
+      $this->data['select'] = $respuesta['Respuesta'];
+      $this->template->load($this->template_file, 'auth/otro_index', $this->data);
+    }
+  }
+
   function consulta()
   {
 
@@ -121,7 +145,7 @@ if( $myVar==''){
 
       $mensale =   $this->session->set_flashdata('message', $this->ion_auth->messages());
       //  echo$mensale;die;
-      redirect('auth/consulta', 'refresh');
+      redirect('auth/menu', 'refresh');
     }else{
 
       if($_POST['captcha']!='' && $_SESSION['captcha'] != $_POST['captcha']){
@@ -197,7 +221,7 @@ if( $myVar==''){
 
           $mensale =   $this->session->set_flashdata('message', $this->ion_auth->messages());
           //  echo$mensale;die;
-          redirect('auth/consulta', 'refresh');
+          redirect('auth/menu', 'refresh');
 
         } }else {
          

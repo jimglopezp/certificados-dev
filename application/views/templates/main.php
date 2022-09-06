@@ -29,9 +29,9 @@
   echo link_tag(array('href' => 'img/favicon.ico', 'media' => 'all', 'rel' => 'shortcut icon')) . "\n";
   // Always add the main stylesheet
   echo link_tag(array('href' => 'bootstrap/css/bootstrap.css', 'media' => 'screen', 'rel' => 'stylesheet')) . "\n";
-  //   echo link_tag( array( 'href' => 'open-iconic-master/font/css/open-iconic-bootstrap.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
-  /* echo link_tag( array( 'href' => 'css/font-awesome.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
-    echo link_tag( array( 'href' => 'css/gris/jquery-ui-1.10.3.custom.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";*/
+  echo link_tag( array( 'href' => 'open-iconic-master/font/css/open-iconic-bootstrap.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
+  echo link_tag( array( 'href' => 'css/font-awesome.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
+  echo link_tag( array( 'href' => 'css/gris/jquery-ui-1.10.3.custom.css', 'media' => 'screen', 'rel' => 'stylesheet' ) ) . "\n";
   // Add any additional stylesheets
   if (isset($style_sheets)) {
     foreach ($style_sheets as $href => $media) {
@@ -58,6 +58,103 @@
   // Add anything else to the head
   echo (isset($extra_head)) ? $extra_head : '';
   ?>
+
+  <style>
+      /* Estilos para nuevo menu */
+      @media (max-width: 1142px) {
+        .zona-boton{
+          width: 95%;
+          float: left;
+          margin: 0.3rem;
+          padding: 2rem 2rem;
+          border: 1px solid #995309;
+          border-radius: 4px;
+          background-color: #d9750b;
+          text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+          box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,
+          0 1px 3px rgba(0,0,0,.2);
+          background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
+          background-image: linear-gradient(#f90 10%,#e76a00 100%);
+          text-align: center;
+        }
+
+        .btn-3d {
+          padding: .6rem 1rem;
+          border: 1px solid #fff;
+          border-radius: 4px;
+          background-color: #d9750b;
+          color: #fff;
+          font-size: 1.4rem;
+          text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+          box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 0 1px 3px rgba(0,0,0,.2);
+          background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
+          background-image: linear-gradient(#f90 10%,#e76a00 100%);
+        }
+
+        .btn-3d:hover, .btn-3d:focus {
+          background-color: #e0811b;
+          background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
+          background-image: linear-gradient(#f0a100 10%,#f70 100%);
+          color: #fff;
+          text-decoration: none;
+        }
+
+        .btn-3d:active {
+          background-color: #cf6a00;
+          box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) inset;
+          background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
+          background-image: linear-gradient(#f0a100 10%,#f70 100%);
+          color: #fff;
+        }
+      }
+      @media (min-width: 1142px) {
+        .zona-boton{
+          width: 48%;
+          float: left;
+          margin: 0.3rem;
+          padding: 2rem 2rem;
+          border: 1px solid #995309;
+          border-radius: 4px;
+          background-color: #d9750b;
+          text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+          box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,
+          0 1px 3px rgba(0,0,0,.2);
+          background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
+          background-image: linear-gradient(#f90 10%,#e76a00 100%);
+          text-align: center;
+        }
+
+        .btn-3d {
+          padding: .6rem 1rem;
+          border: 1px solid #fff;
+          border-radius: 4px;
+          background-color: #d9750b;
+          color: #fff;
+          font-size: 1.4rem;
+          text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+          box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 0 1px 3px rgba(0,0,0,.2);
+          background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
+          background-image: linear-gradient(#f90 10%,#e76a00 100%);
+        }
+
+        .btn-3d:hover, .btn-3d:focus {
+          background-color: #e0811b;
+          background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
+          background-image: linear-gradient(#f0a100 10%,#f70 100%);
+          color: #fff;
+          text-decoration: none;
+        }
+
+        .btn-3d:active {
+          background-color: #cf6a00;
+          box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) inset;
+          background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
+          background-image: linear-gradient(#f0a100 10%,#f70 100%);
+          color: #fff;
+        }
+      }
+
+  </style>
 </head>
 
 <body>

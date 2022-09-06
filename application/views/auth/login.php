@@ -140,7 +140,7 @@ $(function() {
     <label class="sr-only" for="inlineFormInputGroup">Password</label>
         <div class="input-group mb-2">
           <div class="input-group-prepend">
-            <div class="input-group-text"><i class="fas fa-key prefix" aria-hidden="true"></i></div>
+            <div class="input-group-text"><i class="fa fa-key prefix" aria-hidden="true"></i></div>
           </div>
           
           <input  name="password" id="input-pwd" type="password" class="form-control validate" required>
