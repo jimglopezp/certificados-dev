@@ -543,9 +543,9 @@ div.navbar-header ul.nav .span2 li i, div.navbar-header ul.nav .span3 li i {
 }
 /* line 421, style.less */
 .center-form-large {
-  width: 70%;
+  width: 80%;
   padding: 40px;
-  max-width: 800px;
+  max-width: 80%;
   min-width: 320px;
 }
 /* line 427, style.less */
