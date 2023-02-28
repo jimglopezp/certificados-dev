@@ -66,7 +66,7 @@ class Iniciocertificados extends MY_Controller {
                     break;
                 case "RECIPROCAS":
                     //  $post = $this->input->post();
-                    $this->data['titulo'] = "Certificados Recíprocas";
+                    $this->data['titulo'] = "Certificados Recí­procas";
                     $this->data['vista'] = 'certificados17';
                     //    $this->activo2('certificados17');
                     $this->data['pdf'] = "";
@@ -131,7 +131,7 @@ class Iniciocertificados extends MY_Controller {
                     $this->session->set_flashdata('message', $this->data['title']);
                     redirect('auth/consulta', 'refresh');
                 } else {
-                    $this->data['titulo'] = "Certificados Recíprocas";
+                    $this->data['titulo'] = "Certificados Recí­procas";
                     $this->data['vista'] = 'certificados17';
                     $this->data['nombre'] = $resultado['nombre'];
                     $this->data['pdf'] = $resultado['pdf'];
@@ -634,7 +634,7 @@ class Iniciocertificados extends MY_Controller {
                     $this->data['validacion'] = $respuesta['Codigo'];
                     $this->data['Fechas'] = date('Y/m/d H:i:s');
 
-                    $headers = '<p>El Servicio Nacional de Aprendizaje – SENA le informa que usted ha solicitado registrarse Certificados de Aportes y FIC.</p><br><br>';
+                    $headers = '<p>El Servicio Nacional de Aprendizaje SENA le informa que usted ha solicitado registrarse Certificados de Aportes y FIC.</p><br><br>';
                     $headers .= '<p>Su Código de Acceso Seguro es: ' . $respuesta['Codigo'] . '</p><br><br>';
                     $headers .= '<p> Este código expira en 15 minutos </p><br><br>';
                     $headers .= '<p>En caso de presentar inconvenientes en la generación de Certificados de Aportes y FIC, escribir al correo: certiaportes@sena.edu.co</p><br><br>';
@@ -645,18 +645,18 @@ class Iniciocertificados extends MY_Controller {
                     //$htmlContent= 'Su Código de Acceso Seguro es: '. $respuesta['Codigo'];
                     $config = array(
                         'protocol' => 'smtp',
-                        'smtp_host' => 'ssl://smtp.gmail.com',
-                        'smtp_port' => 465,
+                        'smtp_host' => 'relay.sena.edu.co',
+                        'smtp_port' => 25,
                         'smtp_user' => 'certiaportes@sena.edu.co',
-                        'smtp_pass' => 'Sena2020*',
+                        'smtp_pass' => 'Audiencia+2022*',
                         'mailtype' => 'html',
                         'charset' => 'utf-8',
                         'newline' => "\r\n"
                     );
 
                     $this->email->initialize($config);
-                    $this->email->to($this->input->post('correo'), 'Certificados En Línea');
-                    $this->email->from($this->input->post('correo'), 'Certificados En Línea');
+                    $this->email->to($this->input->post('correo'), 'Certificados En Lí­nea');
+                    $this->email->from('certiaportes@sena.edu.co', 'Certificados En Lí­nea');
                     $this->email->subject('SENA -Código de Acceso Seguro');
                     $this->email->message($headers);
                     $this->email->send();
@@ -779,7 +779,7 @@ class Iniciocertificados extends MY_Controller {
             $this->template->load($this->template_file, 'inicio/recuperarClave', $this->data);
         }
         if ($respuesta['Respuesta'] == 5) {
-            $this->data['mensaje'] = " EL NÚMERO DE IDENTIFICACIÓN NO SE ENCUENTRA REGISTRADO ";
+            $this->data['mensaje'] = " EL NúMERO DE IDENTIFICACIÓN NO SE ENCUENTRA REGISTRADO ";
             $this->template->load($this->template_file, 'inicio/recuperarClave', $this->data);
         }
         if ($respuesta['Respuesta'] == 7) {
@@ -793,7 +793,7 @@ class Iniciocertificados extends MY_Controller {
 
             if ($respuesta['Respuesta'] == 1) {
 
-                $headers = '<p>El Servicio Nacional de Aprendizaje – SENA le informa que usted ha solicitado registrarse Certificados de Aportes y FIC.</p><br><br>';
+                $headers = '<p>El Servicio Nacional de Aprendizaje SENA le informa que usted ha solicitado registrarse Certificados de Aportes y FIC.</p><br><br>';
                 $headers .= '<p>Su Código de Recuperación de Contraseña es: ' . $respuesta['Codigo'] . '</p><br><br>';
                 $headers .= '<p> Este código expira en 15 minutos </p><br><br>';
                 $headers .= '<p>En caso de presentar inconvenientes en la generación de Certificados de Aportes y FIC, escribir al correo: certiaportes@sena.edu.co</p><br><br>';
@@ -804,18 +804,18 @@ class Iniciocertificados extends MY_Controller {
                 $htmlContent = 'Su Código de Recuperación de Contraseña es: ' . $respuesta['Codigo'];
                 $config = array(
                     'protocol' => 'smtp',
-                    'smtp_host' => 'ssl://smtp.gmail.com',
-                    'smtp_port' => 465,
+                    'smtp_host' => 'relay.sena.edu.co',
+                    'smtp_port' => 25,
                     'smtp_user' => 'certiaportes@sena.edu.co',
-                    'smtp_pass' => 'Sena2020*',
+                    'smtp_pass' => 'Audiencia+2022*',
                     'mailtype' => 'html',
                     'charset' => 'utf-8',
                     'newline' => "\r\n"
                 );
 
                 $this->email->initialize($config);
-                $this->email->to($this->input->post('correo'), 'Certificados En Línea');
-                $this->email->from($this->input->post('correo'), 'Certificados En Línea');
+                $this->email->to($this->input->post('correo'), 'Certificados En Lí­nea');
+                $this->email->from('certiaportes@sena.edu.co', 'Certificados En Lí­nea');
                 $this->email->subject('SENA -Código de  Recuperación de Contraseña');
                 $this->email->message($headers);
                 $this->email->send();
