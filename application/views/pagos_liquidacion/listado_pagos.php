@@ -10,7 +10,7 @@
 <form id="form1" action="<?php echo base_url('index.php/iniciocertificados/imprimir') ?>" method="post" onsubmit="return confirmar();">
     <input type="hidden" name="vista" id="vista" value="<?php echo $vista; ?>">
     <input type="hidden" name="name_reporte" id="name_reporte" value="<?php echo $titulo; ?>">
- <?php if ($input == 101) { ?>
+    <?php if ($input == 101) { ?>
         <?php
         if (empty($liquidacion_pagos)) {
             echo '<center><h2>No tiene pagos por liquidaciones</h2></center>';
@@ -54,18 +54,18 @@
                     ?>
                 </tbody>     
             </table>
+            <table width="350px" border="0" style="margin: 0 auto;">
+                <tr>
+                    <td align="center" colspan="2">
+                        <input type="hidden"  id="accion" name="accion" value="<?php echo $input; ?>">
+                        <button id="generar" class="btn btn-success">Generar</button>
+                    </td>
+                </tr>
+
+            </table>
             <?php
         }
         ?>
-        <table width="350px" border="0" style="margin: 0 auto;">
-            <tr>
-                <td align="center" colspan="2">
-                    <input type="hidden"  id="accion" name="accion" value="<?php echo $input; ?>">
-                    <button id="generar" class="btn btn-success">Generar</button>
-                </td>
-            </tr>
-
-        </table>
         <input type="hidden" id="codigos_liquidaciones" name="codigos_liquidaciones">
         <input type="hidden" name="nit_empresa_referencia" value="<?php echo $nit; ?>">
     <?php } ?>

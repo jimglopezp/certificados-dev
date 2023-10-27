@@ -54,18 +54,17 @@
                     ?>
                 </tbody>     
             </table>
+            <table width="350px" border="0" style="margin: 0 auto;">
+                <tr>
+                    <td align="center" colspan="2">
+                        <input type="hidden"  id="accion" name="accion" value="<?php echo $input; ?>">
+                        <button id="generar" class="btn btn-success">Generar</button>
+                    </td>
+                </tr>
+            </table>
             <?php
         }
         ?>
-        <table width="350px" border="0" style="margin: 0 auto;">
-            <tr>
-                <td align="center" colspan="2">
-                    <input type="hidden"  id="accion" name="accion" value="<?php echo $input; ?>">
-                    <button id="generar" class="btn btn-success">Generar</button>
-                </td>
-            </tr>
-
-        </table>
         <input type="hidden" id="codigos_liquidaciones" name="codigos_liquidaciones">
         <input type="hidden" name="nit_empresa_referencia" value="<?php echo $nit; ?>">
     <?php } ?>
