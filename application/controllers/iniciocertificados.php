@@ -46,8 +46,8 @@ class Iniciocertificados extends MY_Controller {
         if ($this->ion_auth->logged_in()) {
 
             $this->data['nit'] = COD_USUARIO;
-            //$cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//produccion
-            $cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
+            $cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//produccion
+            //$cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
             $parametros = array('numero' => "1");
             $respuesta = $cliente->call('Certificados_services..ListaCertificadosFic', $parametros);
 
@@ -99,8 +99,8 @@ class Iniciocertificados extends MY_Controller {
 
     function imprimir() {
 
-        //$cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//produccion
-        $cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
+        $cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//produccion
+        //$cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
 
         $id = COD_USUARIO;
         $regional = COD_REGIONAL;
@@ -501,8 +501,8 @@ class Iniciocertificados extends MY_Controller {
     }
 
     function buscar_certificado() {
-        //$cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//produccion
-        $cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
+        $cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//produccion
+        //$cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
 
         $parametros = array('numero' => $this->input->post('numero'), 'codigo' => $this->input->post('codigo'));
 
@@ -555,8 +555,8 @@ class Iniciocertificados extends MY_Controller {
 
 
                     $parametros = array('id1' => $this->input->post('idAportante'), 'correo' => $this->input->post('correo'), 'intentos' => $contador);
-                    //$cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificadosempresa_services/index/wsdl?wsdl", false);//produccion
-                    $cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
+                    $cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificadosempresa_services/index/wsdl?wsdl", false);//produccion
+                    //$cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
                     $respuesta = $cliente->call('Certificadosempresa_services..verificar', $parametros);
                     // print_r($respuesta);die; 
                     $data = $respuesta['Codigo'];
@@ -638,8 +638,8 @@ class Iniciocertificados extends MY_Controller {
             $var = $this->input->post('idVerificacion');
 
             $parametros = array('user' => $this->input->post('nombres'), 'apellidos' => $this->input->post('apellidos'), 'correo' => $this->input->post('correo'), 'tipo1' => $this->input->post('TipoId'), 'tipo2' => $this->input->post('TipoIdLegal'), 'id1' => $this->input->post('idAportante'), 'id2' => $this->input->post('idLegal'));
-            //$cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificadosempresa_services/index/wsdl?wsdl", false);//produccion
-            $cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
+            $cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificadosempresa_services/index/wsdl?wsdl", false);//produccion
+            //$cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
 
             $respuesta = $cliente->call('Certificadosempresa_services..RegistroSirec', $parametros);
 
@@ -674,7 +674,7 @@ class Iniciocertificados extends MY_Controller {
                         'smtp_host' => 'relay.sena.edu.co',
                         'smtp_port' => 25,
                         'smtp_user' => 'certiaportes@sena.edu.co',
-                        'smtp_pass' => 'Audiencia+2022*',
+                        'smtp_pass' => 'certificados2024*-',
                         'mailtype' => 'html',
                         'charset' => 'utf-8',
                         'newline' => "\r\n"
@@ -714,8 +714,8 @@ class Iniciocertificados extends MY_Controller {
         //print_r($this->input->post());
 
         $parametros = array('user' => $this->input->post('identity'), 'pass' => $this->input->post('password'), 'nit' => $this->input->post('nit'));
-        //$cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificadosempresa_services/index/wsdl?wsdl", false);//produccion
-        $cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
+        $cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificadosempresa_services/index/wsdl?wsdl", false);//produccion
+        //$cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
 
         $respuesta = $cliente->call('Certificadosempresa_services..RegistroUpdateLogin', $parametros);
         if ($respuesta['Respuesta'] == 1) {
@@ -794,8 +794,8 @@ class Iniciocertificados extends MY_Controller {
         $intentos = '';
 
         $parametros = array('id1' => $this->input->post('idAportante'), 'correo' => $this->input->post('correo'), 'intentos' => $intentos);
-        //$cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificadosempresa_services/index/wsdl?wsdl", false);//produccion
-        $cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
+        $cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificadosempresa_services/index/wsdl?wsdl", false);//produccion
+        //$cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
 
         $respuesta = $cliente->call('Certificadosempresa_services..verificar', $parametros);
 
@@ -833,7 +833,7 @@ class Iniciocertificados extends MY_Controller {
                     'smtp_host' => 'relay.sena.edu.co',
                     'smtp_port' => 25,
                     'smtp_user' => 'certiaportes@sena.edu.co',
-                    'smtp_pass' => 'Audiencia+2022*',
+                    'smtp_pass' => 'certificados2024*-',
                     'mailtype' => 'html',
                     'charset' => 'utf-8',
                     'newline' => "\r\n"
@@ -882,8 +882,8 @@ class Iniciocertificados extends MY_Controller {
 
     function certificados100() {
         ini_set('memory_limit', '-1');
-        //$cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//produccion
-        $cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
+        $cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//produccion
+        //$cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
         $parametros = array('nit' => COD_USUARIO);
         $respuesta = $cliente->call('Certificados_services..LiquidacionesPagas', $parametros);
         $this->data['nit'] = COD_USUARIO;
@@ -897,8 +897,8 @@ class Iniciocertificados extends MY_Controller {
 
     function certificados101() {
         ini_set('memory_limit', '-1');
-        //$cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//produccion
-        $cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
+        $cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//produccion
+        //$cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
         $parametros = array('nit' => COD_USUARIO);
         $respuesta = $cliente->call('Certificados_services..PagosLiquidaciones', $parametros);
         $this->data['nit'] = COD_USUARIO;
@@ -912,8 +912,8 @@ class Iniciocertificados extends MY_Controller {
 
     function certificados22() {
         ini_set('memory_limit', '-1');
-        //$cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//produccion
-        $cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
+        $cliente = new nusoap_client("http://172.29.19.108/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//produccion
+        //$cliente = new nusoap_client("http://192.168.157.185/sirec/index.php/certificados_services/index/wsdl?wsdl", false);//desarrollo
         $parametros = array('nit' => COD_USUARIO);
         $respuesta = $cliente->call('Certificados_services..PagosFIC', $parametros);
         $this->data['nit'] = COD_USUARIO;
